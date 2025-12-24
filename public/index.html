@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Drawing App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home Page -->
+        <div id="homePage" class="page">
+            <h1>🎨 Real-Time Collaborative Drawing</h1>
+            <p class="subtitle">Connect with friends and draw together!</p>
+            
+            <div class="join-section">
+                <label for="roomCode">Enter Room Code (6 digits):</label>
+                <input type="text" id="roomCode" maxlength="6" placeholder="123456">
+                <button id="joinBtn" onclick="joinRoom()">Join Room</button>
+                
+                <div class="or-divider">OR</div>
+                
+                <button id="generateBtn" onclick="generateRoomCode()">Generate Random Room Code</button>
+            </div>
+            
+            <div class="info">
+                <h3>How it works:</h3>
+                <ol>
+                    <li>Enter a 6-digit room code or generate one</li>
+                    <li>Share the code with your friend</li>
+                    <li>Start drawing together in real-time!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Drawing Page -->
+        <div id="drawingPage" class="page hidden">
+            <header>
+                <h2>🎨 Drawing Room: <span id="currentRoom"></span></h2>
+                <div class="controls">
+                    <button id="clearBtn" onclick="clearCanvas()">Clear Canvas</button>
+                    <button id="backBtn" onclick="goBack()">Back to Home</button>
+                </div>
+            </header>
+
+            <div class="canvas-container">
+                <canvas id="drawingCanvas"></canvas>
+            </div>
+
+            <div class="status">
+                <span id="connectionStatus">Connecting...</span>
+                <span id="roomInfo">Room: <span id="displayRoom"></span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Socket.IO client library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

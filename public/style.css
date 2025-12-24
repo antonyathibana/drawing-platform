@@ -1,0 +1,307 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Page Management */
+.page {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 20px 0;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Home Page Styles */
+#homePage h1 {
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: #718096;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.join-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.join-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.join-section input {
+    width: 200px;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.join-section input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#generateBtn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.or-divider {
+    margin: 20px 0;
+    color: #a0aec0;
+    font-weight: 600;
+    position: relative;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.or-divider::before {
+    left: -80px;
+}
+
+.or-divider::after {
+    right: -80px;
+}
+
+/* Info Section */
+.info {
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    max-width: 400px;
+}
+
+.info h3 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.info ol {
+    color: #718096;
+    padding-left: 20px;
+}
+
+.info li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Drawing Page Styles */
+#drawingPage {
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+#drawingPage header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#drawingPage h2 {
+    color: #4a5568;
+    font-size: 1.8rem;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#clearBtn {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+}
+
+#clearBtn:hover {
+    box-shadow: 0 5px 15px rgba(245, 101, 101, 0.4);
+}
+
+#backBtn {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+}
+
+#backBtn:hover {
+    box-shadow: 0 5px 15px rgba(113, 128, 150, 0.4);
+}
+
+/* Canvas Container */
+.canvas-container {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    border: 3px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+#drawingCanvas {
+    border: 1px solid #cbd5e0;
+    cursor: crosshair;
+    background: white;
+    max-width: 100%;
+    max-height: 500px;
+}
+
+/* Status Bar */
+.status {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 8px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#connectionStatus {
+    color: #48bb78;
+    font-weight: 600;
+}
+
+#roomInfo {
+    color: #4a5568;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .page {
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+    #homePage h1 {
+        font-size: 2rem;
+    }
+
+    #drawingPage header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .status {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .canvas-container {
+        margin: 10px 0;
+        min-height: 300px;
+    }
+
+    .or-divider::before,
+    .or-divider::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-section input {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
